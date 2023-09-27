@@ -1,38 +1,82 @@
+
 .App {
-  text-align: center;
+  background-image: url("/public/fondo.png");
+  background-size: cover; /* Ajusta la imagen de fondo para cubrir todo el elemento */
+  background-repeat: no-repeat; /* Evita la repetición de la imagen de fondo */
+  background-attachment: fixed; /* Fija la imagen de fondo en su lugar mientras se desplaza la página */
+
+  /* Establece el tamaño del div para cubrir toda la ventana del navegador */
+  width: 100vw;
+  height: 100vh;
+
+  /* Establece márgenes y relleno a 0 para asegurarse de que el div no tenga espacio adicional */
+  margin: 0;
+  padding: 0;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.banner {
+  background-image: url("/public/banner.png"); /* Color de fondo del banner */
+  padding: 10px; /* Espaciado interior del banner */
+  width: 98.95%;
+  margin-top: 0px;
+  
   }
+  
+  
+/* Estilos para el cuadro de búsqueda */
+.banner input[type="text"] {
+  padding: 10px;
+  width: 20%; /* Ancho del cuadro de búsqueda */
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px; /* Espacio entre el cuadro de búsqueda y el botón */
+  
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Estilos para el botón de búsqueda */
+.boton_busqueda {
+  padding: 10px 20px;
+  background-color: #FFA500; /* Color de fondo del botón */
+  border: none;
+  border-radius: 5px;
   color: white;
+  cursor: pointer;
+ }
+
+ .banner_item_location{
+  text-align: center;
+  margin-top: -1px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Estilos para la lista de navegación */
+.banner nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 100;
+  bottom: 0;
+  left: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Estilos para los elementos de la lista de navegación */
+.banner nav ul li {
+  display: inline;
+  margin-right: 20px; /* Espacio entre los elementos de la lista */
+  font-size: 20px; /* Tamaño de la fuente */
+  
+}
+
+.banner nav ul li a {
+  color: #ffffff; /* Color de texto rojo por defecto */
+  text-decoration: none; /* Quita la subrayado predeterminado */
+}
+
+.carrito{
+  padding: 20px 25px;
+  background-image: url("/public/carrito.png") ; /* Color de fondo del botón */
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  cursor: pointer;
+  left: 50px;
+  
 }
