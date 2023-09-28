@@ -20,14 +20,15 @@
   padding: 10px; /* Espaciado interior del banner */
   width: 98.95%;
   margin-top: 0px;
-  
+  width: 100vw;
+  height: 23vh;
   }
   
   
 /* Estilos para el cuadro de búsqueda */
 .banner input[type="text"] {
   padding: 10px;
-  width: 20%; /* Ancho del cuadro de búsqueda */
+  width: 60%; /* Ancho del cuadro de búsqueda */
   border: none;
   border-radius: 5px;
   margin-right: 10px; /* Espacio entre el cuadro de búsqueda y el botón */
@@ -78,5 +79,48 @@
   border-radius: 5px;
   cursor: pointer;
   left: 50px;
-  
 }
+
+.banner2 {
+  height: 80%;
+  padding: 0px; /* Espaciado interior del banner */
+  margin-top: 0px;
+  display: flex;
+  
+  }
+.banner3 {
+  display: flex;
+  flex-direction: column; /* Para centrar verticalmente el contenido */
+  
+  align-items: center; /* Para centrar horizontalmente el contenido */
+  height: 40%;
+  width: 100%;
+}
+
+.columna {
+  width:30%;
+  float:right;
+  text-align: right;
+  height: 30%;
+}
+
+.columna2 {
+  width:45%;
+  float:none;
+  position: bottom;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: flex-end; 
+  height: 80%;
+    
+}
+
+
+.imagen {
+  max-width: 100%; /* Ajusta el ancho máximo de la imagen para que se ajuste al div */
+  height: auto; /* Mantiene la proporción de aspecto de la imagen */
+  height: 40vmin;
+  width: 55vmin;
+  pointer-events: none;
+}
+
