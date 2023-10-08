@@ -1,0 +1,7 @@
+.banner {
+    background-image: url("/public/banner.png"); /* Color de fondo del banner */
+    margin-top: 0px;
+    width: 500vw;
+    height: 15vh;
+    
+    }
