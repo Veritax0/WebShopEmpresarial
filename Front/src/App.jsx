@@ -5,9 +5,9 @@ import SearchBox from './components/SearchBox';
 const App =()=>{
 
   return(
-      <div >
-        <div className="ItemLocation">
-           <Banner></Banner>
+      <div className="App">
+        <div className="ItenLocation">
+           <Banner></Banner> <SearchBox></SearchBox>
         </div>
     </div>
   )
