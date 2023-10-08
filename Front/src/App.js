@@ -1,6 +1,5 @@
 import './App.css';
-import CarouselComponent from './components/Carrousel';
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Link} from 'react-router-dom';
 
 function App() {
   return (
@@ -26,7 +25,6 @@ function App() {
           
         </div>
         <div className="banner3">
-          <CarouselComponent></CarouselComponent>
           <div>
             <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAPCOj9Mg9sDlaVQki34-XMKq9KFs8PJSOeA&usqp=CAU'></img>
           </div>
