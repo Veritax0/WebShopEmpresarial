@@ -7,7 +7,9 @@ const App =()=>{
   return(
       <div className="App">
         <div className="ItenLocation">
-           <Banner></Banner> <SearchBox></SearchBox>
+           <Banner>
+              <SearchBox></SearchBox>
+           </Banner>
         </div>
     </div>
   )
