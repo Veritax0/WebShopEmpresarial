@@ -8,8 +8,10 @@ const App =()=>{
   return(
       <div className="App">
         <div className="ItenLocation">
-           <Banner></Banner> <SearchBox></SearchBox><PromoSetion></PromoSetion>
-        
+        <Banner>
+              <SearchBox></SearchBox>
+         </Banner>
+         <PromoSetion></PromoSetion>
         </div>
     </div>
   )

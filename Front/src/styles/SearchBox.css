@@ -4,6 +4,5 @@
      border: none;
      border-radius: 50px;
     margin-right: 100px; /* Espacio entre el cuadro de búsqueda y el botón */
-    
-  
+    position: relative;
 }
