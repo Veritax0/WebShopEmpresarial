@@ -12,8 +12,19 @@
   /* Establece márgenes y relleno a 0 para asegurarse de que el div no tenga espacio adicional */
   margin: 0;
   padding: 0;
+  
 
 }
+
+
+.ItemLocation{
+
+   
+}
+
+
+
+
 
 .banner {
   background-image: url("/public/banner.png"); /* Color de fondo del banner */
