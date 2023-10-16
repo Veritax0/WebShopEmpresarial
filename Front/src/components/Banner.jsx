@@ -5,7 +5,9 @@ const Banner =({children})=>{
 
     return(
 <div className="Banner">
-    {children || <p></p>}
+        <div className="Items">
+            {children || <p></p>}
+        </div>
 </div>
     )
 }

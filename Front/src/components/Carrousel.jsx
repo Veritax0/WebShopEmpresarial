@@ -1,10 +1,6 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-//import Carousel de bootstrap:
-//npm install bootstrap
-//npm install react-bootstrap bootstrap
-
-import ExampleCarouselImage from '../components/ExampleCarouselImage.avif';
+import '../styles/CarouselComponent.css';
 
 function CarouselComponent() {
   const [index, setIndex] = useState(0);
@@ -14,28 +10,26 @@ function CarouselComponent() {
   };
 
   return (
-    <div style={{ alignContent: 'center',alignItems:'center', display: 'block', width: 700, padding: 30 }}>
+    <div className="carousel-container">
       <Carousel>
         <Carousel.Item interval={5000} >
-          <img src="https://media.geeksforgeeks.org/wp-content/uploads/20210425122739/2-300x115.png"/>
+          <img src="https://media.geeksforgeeks.org/wp-content/uploads/20210425122739/2-300x115.png" alt="Promo Image 1"/>
           <Carousel.Caption>
             <h3>Carousel</h3>
             <p>Promo1</p>
           </Carousel.Caption>
-          <img  src="https://media.geeksforgeeks.org/wp-content/uploads/20210425122716/1-300x115.png"/>
+          <img src="https://media.geeksforgeeks.org/wp-content/uploads/20210425122716/1-300x115.png" alt="Promo Image 2"/>
         </Carousel.Item>
         <Carousel.Item interval={5000}>
-          <img src="https://media.geeksforgeeks.org/wp-content/uploads/20210425122739/2-300x115.png"/>
+          <img src="https://media.geeksforgeeks.org/wp-content/uploads/20210425122739/2-300x115.png" alt="Promo Image 3"/>
           <Carousel.Caption>
-          <h3>Carousel</h3>
+            <h3>Carousel</h3>
             <p>Promo2</p>
           </Carousel.Caption>
-          <img  src="https://media.geeksforgeeks.org/wp-content/uploads/20210425122716/1-300x115.png"/>
-          
-          
+          <img src="https://media.geeksforgeeks.org/wp-content/uploads/20210425122716/1-300x115.png" alt="Promo Image 4"/>
         </Carousel.Item>
       </Carousel>
-  </div>
+    </div>
   );
 }
 

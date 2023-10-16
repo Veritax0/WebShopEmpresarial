@@ -7,7 +7,7 @@
 
   /* Establece el tamaño del div para cubrir toda la ventana del navegador */
   width: 100vw;
-  height: 100vh;
+  height: 200vh;
 
   /* Establece márgenes y relleno a 0 para asegurarse de que el div no tenga espacio adicional */
   margin: 0;
@@ -15,15 +15,6 @@
   
 
 }
-
-
-.ItemLocation{
-
-   
-}
-
-
-
 
 
 .banner {
