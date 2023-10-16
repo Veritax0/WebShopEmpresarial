@@ -1,6 +1,6 @@
 .Carrito{
     padding: 20px 25px;
-    background-image: url("../public/carrito.png") ; /* Color de fondo del botón */
+    background-image: url("../images/carrito.png") ; /* Color de fondo del botón */
     background-repeat: no-repeat;
     border-radius: 5px;
     cursor: pointer;
