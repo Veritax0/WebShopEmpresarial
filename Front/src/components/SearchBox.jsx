@@ -4,8 +4,9 @@ import "../styles/SearchBox.css";
 const SearchBox =()=>{
     return(
 
-        <div className= "SearchBox">
-        <input type="text" placeholder="Buscar" />
+        <div >
+        <input className= "SearchBox" type="text" placeholder="Buscar" />
+        <button className="Boton_busqueda">Buscar</button>
         </div>
     )
 }

@@ -1,3 +1,8 @@
+.PromoSection{
+    position: relative;
+    top:300px;
+}
+
 .promoProducts {
     display: flex;
     flex-wrap: wrap;
@@ -13,4 +18,5 @@
     font-weight: bold; /* Hacemos el texto más grueso */
     text-transform: uppercase; /* Convertimos el texto a mayúsculas */
     letter-spacing: 2px; /* Espaciamos un poco las letras */
+    font-family: Arial, sans-serif; 
 }
