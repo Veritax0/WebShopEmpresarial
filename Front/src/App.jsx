@@ -7,10 +7,23 @@ import Carrito from './components/Carrito';
 import Itemtext from './components/ItemsText';
 import Logo from './components/Logo';
 import BotonWhatsap from './components/BotonWhatsap';
+import { Component } from 'react';
+import { ProductService } from './service/ProductService';
 
-const App =()=>{
+class App extends Component{
 
-  return(
+  constructor(){
+    super();
+    this.state = {};
+    this.ProductService = new ProductService();
+  }
+
+  componentDidMount(){
+    this.ProductService.getAll().then(data => this.setState({productos: data}))
+  }
+
+  render(){
+    return(
       <div className="App">
         <div className="ItenLocation">
         <Banner>
@@ -22,6 +35,7 @@ const App =()=>{
         </div>
     </div>
   )
+  }
 }
 
 export default App;
