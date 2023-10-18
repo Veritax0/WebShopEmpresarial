@@ -6,9 +6,5 @@ export class ProductService{
 
     getAll(){
         return axios.get(this.baseUrl + "buscar").then(res => res.data);
-    baseUrl = "";
-
-    getAll(){
-        return axios.get(this.baseUrl + "all").then(res => res.data);
     }
 }
