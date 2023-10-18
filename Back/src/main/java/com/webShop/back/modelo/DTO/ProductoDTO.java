@@ -9,14 +9,14 @@ public class ProductoDTO{
     private int precio;
     @Getter
     private String imagenPrincipal;
-    @Getter
-    private DetalleProductoDTO detalleProductoDTO;
+    // @Getter
+    // private DetalleProductoDTO detalleProductoDTO;
     //Constructor
-    public ProductoDTO(String nombre, int precio, String imagenPrincipal, DetalleProductoDTO detalleProductoDTO) {
+    public ProductoDTO(String nombre, int precio, String imagenPrincipal) {
         this.nombre = nombre;
         this.precio = precio;
         this.imagenPrincipal = imagenPrincipal;
-        this.detalleProductoDTO = detalleProductoDTO;
+        // this.detalleProductoDTO = detalleProductoDTO;
     }
 
     public ProductoDTO() {

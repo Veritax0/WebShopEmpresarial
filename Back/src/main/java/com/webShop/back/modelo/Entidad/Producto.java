@@ -2,19 +2,51 @@ package com.webShop.back.modelo.Entidad;
 
 
 
-import lombok.Getter;
-import lombok.Setter;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.*;
 
+import com.webShop.back.modelo.DTO.ProductoDTO;
+
+@Entity
 public class Producto {
-    @Getter @Setter
-    private int id;
-    @Getter @Setter
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String nombre;
-    @Getter @Setter
     private int precio;
-    @Getter @Setter
+    @Column(name = "imagen_principal")
     private String imagenPrincipal;
-    @Getter @Setter
-    private DetalleProducto detalleProducto;
+    // @OneToOne(mappedBy = "detalleProducto", cascade = CascadeType.ALL)
+    // private DetalleProducto detalleProducto;
+
+    public ProductoDTO crearDto(Producto producto){
+        return new ProductoDTO(producto.nombre, producto.precio, producto.imagenPrincipal);
+    }
+
+    public List<ProductoDTO> crearListaDto(List<Producto> productos){
+        List<ProductoDTO> productosDTO = new ArrayList<ProductoDTO>();
+        for (Producto producto : productos) {
+            productosDTO.add(new ProductoDTO(producto.nombre, producto.precio, producto.imagenPrincipal));
+        }
+        return productosDTO;
+    }
+
+    public Producto(Long id, String nombre, int precio, String imagenPrincipal) {
+        this.id = id;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.imagenPrincipal = imagenPrincipal;
+    }
+
+    public Producto(String nombre, int precio, String imagenPrincipal) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.imagenPrincipal = imagenPrincipal;
+    }
+
+    public Producto() {
+    }
+
 }

@@ -5,11 +5,11 @@ import lombok.Getter;
 import lombok.Setter;
 
 
-public class Inventario {
-    @Getter @Setter
-    private int id;
-    @Getter @Setter
-    private DetalleProducto detalleProducto;
-    @Getter @Setter
-    private int cantidad;
-}
+// public class Inventario {
+//     @Getter @Setter
+//     private int id;
+//     @Getter @Setter
+//     private DetalleProducto detalleProducto;
+//     @Getter @Setter
+//     private int cantidad;
+// }
