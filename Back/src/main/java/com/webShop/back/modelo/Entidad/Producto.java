@@ -22,13 +22,13 @@ public class Producto {
     // private DetalleProducto detalleProducto;
 
     public ProductoDTO crearDto(Producto producto){
-        return new ProductoDTO(producto.nombre, producto.precio, producto.imagenPrincipal);
+        return new ProductoDTO(producto.id, producto.nombre, producto.precio, producto.imagenPrincipal);
     }
 
     public List<ProductoDTO> crearListaDto(List<Producto> productos){
         List<ProductoDTO> productosDTO = new ArrayList<ProductoDTO>();
         for (Producto producto : productos) {
-            productosDTO.add(new ProductoDTO(producto.nombre, producto.precio, producto.imagenPrincipal));
+            productosDTO.add(new ProductoDTO(producto.id, producto.nombre, producto.precio, producto.imagenPrincipal));
         }
         return productosDTO;
     }
@@ -40,11 +40,11 @@ public class Producto {
         this.imagenPrincipal = imagenPrincipal;
     }
 
-    public Producto(String nombre, int precio, String imagenPrincipal) {
-        this.nombre = nombre;
-        this.precio = precio;
-        this.imagenPrincipal = imagenPrincipal;
-    }
+    // public Producto(String nombre, int precio, String imagenPrincipal) {
+    //     this.nombre = nombre;
+    //     this.precio = precio;
+    //     this.imagenPrincipal = imagenPrincipal;
+    // }
 
     public Producto() {
     }
