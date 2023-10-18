@@ -15,9 +15,6 @@ class PromoSection extends Component{
         this.ProductService.getAll().then(data => this.setState({productos: data}))
       }
 
-        
-    
-    
 
     render(){
         const promoProducts = [
