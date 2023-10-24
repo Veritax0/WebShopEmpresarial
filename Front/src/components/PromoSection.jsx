@@ -11,11 +11,11 @@ class PromoSection extends Component{
         this.ProductService = new ProductService();
         this.products = []
         this.ProductService.getAll().then(data => this.products.push(data))
+        console.log(this.products)
       }
     
       componentDidMount(){
         this.ProductService.getAll().then(data => this.setState({productos: data}))
-        console.log(this.products)
       }
 
 
