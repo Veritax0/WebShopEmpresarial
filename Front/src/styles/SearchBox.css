@@ -1,12 +1,13 @@
 .SearchBox{
     padding: 5px;
-    width: 25%; /* Ancho del cuadro de búsqueda */
+    width: 100%; /* Ancho del cuadro de búsqueda */
     border: none;
     border-radius: 10px;
     margin-right: 100px; /* Espacio entre el cuadro de búsqueda y el botón */
     position:relative;
-    left: 600px;
-    top: 10px;
+    left: 720px;
+    top: 32px;
+   
 }
 
 .Boton_busqueda{
@@ -19,7 +20,14 @@
     color: white;
     cursor: pointer;
     position:relative;
-    left: 510px;
-    top: 10px;
+    left: 1100px;
+    bottom: 2px;
+
+}
+
+.Contenedor{
+    position: relative;
+    
+
 
 }

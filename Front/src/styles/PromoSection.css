@@ -1,6 +1,6 @@
 .PromoSection{
-    position: relative;
-    top:300px;
+    position: absolute;
+    top:500px;
 }
 
 .promoProducts {
@@ -8,6 +8,7 @@
     flex-wrap: wrap;
     gap: 160px; /* Este espacio se asegura de que haya un pequeño margen entre cada PromoBox */
     justify-content: flex-start; /* Alinea los PromoBox al inicio del contenedor */
+    
 }
 
 .promoTitle {
