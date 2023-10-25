@@ -10,7 +10,7 @@ import BotonWhatsap from './components/BotonWhatsap';
 
 const App =()=>{
 
-  return(
+    return(
       <div className="App">
         <div className="ItemLocation">
         <Banner>
@@ -22,6 +22,6 @@ const App =()=>{
         </div>
     </div>
   )
-}
+  }
 
 export default App;

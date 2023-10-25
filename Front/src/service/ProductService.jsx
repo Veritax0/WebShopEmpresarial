@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 export class ProductService {
     baseUrl = "http://localhost:3000/producto/";
 
@@ -7,3 +8,4 @@ export class ProductService {
         return axios.get(this.baseUrl + "buscar").then(res => res.data);
     }
 }
+
