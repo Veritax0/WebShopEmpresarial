@@ -12,7 +12,7 @@ const App =()=>{
 
     return(
       <div className="App">
-        <div className="ItenLocation">
+        <div className="ItemLocation">
         <Banner>
               <SearchBox></SearchBox> <Carrito></Carrito><Itemtext></Itemtext><Logo></Logo><BotonWhatsap></BotonWhatsap>
               

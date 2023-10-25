@@ -1,9 +1,11 @@
 import axios from "axios";
 
-export class ProductService{
-    baseUrl = "";
 
-    getAll(){
-        return axios.get(this.baseUrl + "all").then(res => res.data);
+export class ProductService {
+    baseUrl = "http://localhost:3000/producto/";
+
+    getAll() {
+        return axios.get(this.baseUrl + "buscar").then(res => res.data);
     }
 }
+
