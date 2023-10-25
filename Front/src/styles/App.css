@@ -7,13 +7,27 @@
 
   /* Establece el tamaño del div para cubrir toda la ventana del navegador */
   width: 100vw;
-  height: 200vh;
+  height: 100vh;
 
   /* Establece márgenes y relleno a 0 para asegurarse de que el div no tenga espacio adicional */
   margin: 0;
   padding: 0;
   
+  
 
 }
 
+.ItemLocation{
+  position: relative;
+
+  display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: stretch;
+  
+    
+    
+    
+    height: 100vh; 
+
+}
 
