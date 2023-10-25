@@ -1,6 +1,5 @@
 import axios from "axios";
 
-
 export class ProductService {
     baseUrl = "http://localhost:3000/producto/";
 

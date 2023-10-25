@@ -2,37 +2,43 @@ package com.webShop.back.modelo.Entidad;
 
 import java.util.List;
 
-import lombok.Getter;
-import lombok.Setter;
+import javax.persistence.CascadeType;
+import javax.persistence.CollectionTable;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 
-public class DetalleProducto {
-    @Getter @Setter
-    private int id;
-    @Getter @Setter
-    private Inventario inventario;
-    @Getter @Setter
-    private String descripcion;
-    @Getter @Setter
-    private String caracteristicas;
-    @Getter @Setter
-    private List<String> listaImagenes;
-    @Getter @Setter
-    private Categoria categoria;
-    @Getter @Setter
-    private Producto producto;
+// @Entity
+// public class DetalleProducto {
+//     @Id
+//     @GeneratedValue(strategy = GenerationType.IDENTITY)
+//     private Long id;
+//     // private Inventario inventario;
+//     private String descripcion;
+//     private String caracteristicas;
+//     @ElementCollection
+//     @CollectionTable(name = "imagenes", joinColumns = @JoinColumn(name = "imagen_id"))
+//     @Column(name = "lista_imagenes")
+//     private List<String> listaImagenes;
+//     @OneToOne(mappedBy = "detalleProducto")
+//     private Categoria categoria;
+
+//     //Constructores
+//     public DetalleProducto() {
+//     }
     
-    //Constructores
-    public DetalleProducto() {
-    }
-    public DetalleProducto(int id, String nombre, int precio, Inventario inventario, String descripcion, String caracteristicas,
-            List<String> listaImagenes, Categoria categoria) {
-        this.setId(id);
-        this.setInventario(inventario);
-        this.setDescripcion(descripcion);
-        this.setCaracteristicas(caracteristicas);
-        this.setListaImagenes(listaImagenes);
-        this.setCategoria(categoria);
-    }
-
-}
+//     public DetalleProducto(Long id, String descripcion, String caracteristicas,
+//             List<String> listaImagenes, Producto producto) {
+//         this.id = id;
+//         // this.inventario = inventario;
+//         this.descripcion = descripcion;
+//         this.caracteristicas = caracteristicas;
+//         this.listaImagenes = listaImagenes;
+//     }
+// }
