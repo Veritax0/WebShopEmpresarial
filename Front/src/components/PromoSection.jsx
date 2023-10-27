@@ -11,22 +11,29 @@ class PromoSection extends Component{
         this.ProductService = new ProductService();
         this.products = []
         this.ProductService.getAll().then(data => this.products.push(data))
-        console.log(this.products)
       }
     
       componentDidMount(){
         this.ProductService.getAll().then(data => this.setState({productos: data}))
       }
 
+    getProducts(){
+        var productsArray = this.products
+        var productos = productsArray
+        return productos
+    }
 
     render(){
-
+        var products = this.getProducts()
+        var p = products[0]
+        console.log(products)
+        console.log(p)
         return (
             <div className="PromoSection">
                 <h1 className="promoTitle">Productos en Promoción y Nuevos</h1>
                     <div className="promoProducts">
-                    {this.products.map(product => (
-                        <PromoBox key={product.id} product={product} />
+                    {products.map(products => (
+                        <PromoBox key={products.id} product={products} />
                     ))}
                 </div>
             </div>
