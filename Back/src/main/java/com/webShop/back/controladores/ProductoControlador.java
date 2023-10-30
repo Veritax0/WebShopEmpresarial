@@ -53,7 +53,7 @@ public class ProductoControlador {
         if (productoGuardado == null){
             return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).build();
         } else {
-            return  ResponseEntity.ok(productoGuardado);
+            return ResponseEntity.status(HttpStatus.CREATED).body(productoGuardado);
         }
     }
 
