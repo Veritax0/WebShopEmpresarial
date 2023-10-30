@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PromoBox from "./PromoBox";
 import "../styles/PromoSection.css"
-import { ProductService } from './service/ProductService';
+import { ProductService } from '../service/ProductService';
 
 class PromoSection extends Component{
 
