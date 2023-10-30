@@ -1,7 +1,8 @@
 import axios from "axios";
 
 export class ProductService {
-    baseUrl = "http://localhost:3000/";
+
+    baseUrl = "http://localhost:8080/producto/";
 
     getAll() {
         return axios.get(this.baseUrl ).then(res => res.data);
