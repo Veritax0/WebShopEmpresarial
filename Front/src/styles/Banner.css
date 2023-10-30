@@ -1,12 +1,14 @@
 .Banner {
-    background-image: url("../images/banner.png"); /* Color de fondo del banner */
-    margin-top: 0px;
-    width: 99vw;
-    height: 15vh;
-    position: absolute;
-    align-items: center;
+    background-image: url("../images/banner.png");
+    background-size: cover;  /* Asegurarse de que la imagen cubra el banner */
+    display: flex;
+    
+    margin-top: 0;
+    width: 100vw;
+    height: 10vh;
+    position: relative;
+    
+    
+    
     }
 
-    .Items{
-        background-color: transparent;
-    }

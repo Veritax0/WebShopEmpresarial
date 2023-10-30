@@ -1,8 +1,10 @@
 .Logo{
     position: relative;
-    left: 800px;
-    width: 100px; /* O el valor que desees */
+    left: 620px;
+    width: 85px; 
     height: auto;
-   background-color: transparent;
-    bottom: 60px;
+    background-color: transparent;
+    bottom:174px;
+    
+    
 }

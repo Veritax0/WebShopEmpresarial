@@ -1,12 +1,21 @@
 .carousel-container {
    
     display:flex;
-    width: 600px;
-    height: 100px;
-    
-    position: relative;
-    left: 590px;
+    right: 800px;
     top: 200px;
+    
+    
+    
+    position: absolute;
+    
+    
+    
+}
+
+.carousel-container .carousel-item img {
+    width: 400px;    /* Ancho de la imagen */
+    height: 200px;   /* Alto de la imagen */
+    object-fit: cover;   /* Esto asegura que la imagen cubra el espacio definido sin estirarse */
 }
 
 

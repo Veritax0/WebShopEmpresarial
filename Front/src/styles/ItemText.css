@@ -5,8 +5,8 @@ ul {
     margin: 0; /* Elimina el margen predeterminado */
     display: flex; /* Establece la disposición en línea */
     position: relative;
-    top: 30px;
     left: 10px;
+    bottom: 80px;
 }
 
 /* Estiliza cada elemento de la lista */
