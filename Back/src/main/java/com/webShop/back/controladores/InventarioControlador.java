@@ -41,7 +41,7 @@ public class InventarioControlador {
         if (inventarioGuardado == null){
             return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).build();
         } else {
-            return  ResponseEntity.ok(inventarioGuardado);
+            return  ResponseEntity.status(HttpStatus.CREATED).body(inventarioGuardado);
         }
     }
 
