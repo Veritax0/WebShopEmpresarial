@@ -5,6 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+import com.webShop.back.modelo.DTO.CategoriaDTO;
+
 import java.util.Set;
 
 import lombok.Getter;
@@ -20,5 +23,22 @@ public class Categoria {
     @Getter
     @OneToMany(mappedBy = "categoria")
     private Set<DetalleProducto> detalleProducto;
+
+    public Categoria(Long id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
+    }
+
+    public Categoria() {
+    }
+
+    public Categoria(CategoriaDTO categoriaDTO) {
+        this.id = categoriaDTO.getId();
+        this.nombre = categoriaDTO.getNombre();
+    }
+
+    public CategoriaDTO crearDto(){
+        return new CategoriaDTO(this.id, this.nombre);
+    }
 
 }

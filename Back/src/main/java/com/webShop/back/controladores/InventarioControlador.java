@@ -11,37 +11,42 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.webShop.back.modelo.DTO.CategoriaDTO;
-import com.webShop.back.modelo.Entidad.Categoria;
-import com.webShop.back.services.CategoriaServices;
-
+import com.webShop.back.modelo.DTO.InventarioDTO;
+import com.webShop.back.modelo.Entidad.Inventario;
+import com.webShop.back.services.InventarioServices;
 
 @RestController
-@RequestMapping ("/categoria")
+@RequestMapping ("/inventario")
 @CrossOrigin(origins = "*")
-public class CategoriaControlador {
+public class InventarioControlador {
     
     @Autowired
-    private CategoriaServices categoriaServices;
-    
+    private InventarioServices inventarioServices;
+
+
     @GetMapping("/{id}")
-    public ResponseEntity<CategoriaDTO> buscarPorId(@PathVariable Long id){
-        CategoriaDTO categoriaEncontrada = categoriaServices.buscarPorId(id);
-        if (categoriaEncontrada == null){
+    public ResponseEntity<InventarioDTO> buscarPorId(@PathVariable Long id){
+        InventarioDTO inventarioEncontrado = inventarioServices.buscarPorId(id);
+        if (inventarioEncontrado == null){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         } else {
-            return  ResponseEntity.ok(categoriaEncontrada);
+            return  ResponseEntity.ok(inventarioEncontrado);
         }
     }
 
     @PostMapping("/guardar")
-    public ResponseEntity<Categoria> guardarcategoria(@RequestBody CategoriaDTO categoria){  
-        Categoria categoriaGuardado = categoriaServices.guardar(categoria);
-        if (categoriaGuardado == null){
+    public ResponseEntity<Inventario> guardarInventario(@RequestBody InventarioDTO inventario){
+        Inventario inventarioGuardado = inventarioServices.guardar(inventario);
+        if (inventarioGuardado == null){
             return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).build();
         } else {
-            return  ResponseEntity.status(HttpStatus.CREATED).body(categoriaGuardado);
+            return  ResponseEntity.ok(inventarioGuardado);
         }
     }
+
+
+
+
+
 
 }

@@ -1,30 +1,31 @@
 package com.webShop.back.modelo.Entidad;
 
-import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.CollectionTable;
-import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+import com.webShop.back.modelo.DTO.DetalleProductoDTO;
 
 import lombok.Getter;
 
 
 @Entity
+@Table(name = "detalle_producto")
 public class DetalleProducto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
     private Long id;
-    // private Inventario inventario;
+    @OneToOne
+    @JoinColumn(name="inventario_id")
+    private Inventario inventario;
     @Getter
     private String descripcion;
     @Getter
@@ -44,15 +45,32 @@ public class DetalleProducto {
     public DetalleProducto() {  
     }
     
-    public DetalleProducto(Long id, String descripcion, String caracteristicas,
+    public DetalleProducto(Long id, Inventario inventario, String descripcion, String caracteristicas,
         String imagen1, String imagen2, String imagen3, Categoria categoria) {
         this.id = id;
-        // this.inventario = inventario;
+        this.inventario = inventario;
         this.descripcion = descripcion;
         this.caracteristicas = caracteristicas;
         this.imagen1 = imagen1;
-        this.imagen1 = imagen2;
-        this.imagen1 = imagen3;
+        this.imagen2 = imagen2;
+        this.imagen3 = imagen3;
         this.categoria = categoria;
     }
+
+    public DetalleProducto(DetalleProductoDTO detalleProductoDTO){
+        this.id = detalleProductoDTO.getId();
+        this.inventario = new Inventario(detalleProductoDTO.getInventario());
+        this.descripcion = detalleProductoDTO.getDescripcion();
+        this.caracteristicas = detalleProductoDTO.getCaracteristicas();
+        this.imagen1 = detalleProductoDTO.getImagen1();
+        this.imagen2 = detalleProductoDTO.getImagen2();
+        this.imagen3 = detalleProductoDTO.getImagen3();
+        this.categoria = new Categoria(detalleProductoDTO.getCategoria());
+    }
+
+    public DetalleProductoDTO crearDto(){
+        return new DetalleProductoDTO(this.id, this.inventario.crearDto(), 
+        this.descripcion, this.caracteristicas, this.imagen1, this.imagen2, this.imagen3, 
+        this.categoria.crearDto());
+    }  
 }

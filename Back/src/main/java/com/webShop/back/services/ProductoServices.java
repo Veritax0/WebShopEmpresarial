@@ -22,13 +22,13 @@ public class ProductoServices {
         if (productoEncontrado.isEmpty()){
             return null;  
         } else {
-            return producto.crearDto(productoEncontrado.get());
+            return productoEncontrado.get().crearDto();
         }
     }
 
     public Producto guardarProducto(ProductoDTO producto) {
         try {
-            Producto productoNuevo = new Producto(null, producto.getNombre(), producto.getPrecio(), producto.getImagenPrincipal());
+            Producto productoNuevo = new Producto(producto);
             return IproductoDAO.saveAndFlush(productoNuevo);
         } catch (Exception e) {
             System.out.println("Error al guardar el producto"+ e);
