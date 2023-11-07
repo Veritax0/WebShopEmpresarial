@@ -48,9 +48,6 @@ public class ProductoServices {
     }
 
     public boolean eliminarProducto(Long id) {
-        // if (IproductoDAO.existsById(id)){
-        //         return false;
-        //     }
         try {
             IproductoDAO.deleteById(id);
             return true;

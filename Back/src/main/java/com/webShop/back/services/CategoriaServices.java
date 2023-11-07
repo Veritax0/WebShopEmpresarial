@@ -15,11 +15,11 @@ import com.webShop.back.persistencia.ICategoriaDAO;
 public class CategoriaServices {
     
     @Autowired     
-    private ICategoriaDAO IcategoriaDAO;
+    private ICategoriaDAO ICategoriaDAO;
 
 
     public CategoriaDTO buscarPorId(Long id){
-        final Optional<Categoria> categoriaEncontrada = IcategoriaDAO.findById(id);
+        final Optional<Categoria> categoriaEncontrada = ICategoriaDAO.findById(id);
         if (categoriaEncontrada.isEmpty()){
             return null;  
         } else {
@@ -30,11 +30,20 @@ public class CategoriaServices {
     public Categoria guardar(CategoriaDTO categoria) {
         try {
             Categoria categoriaNueva = new Categoria(categoria);
-            return IcategoriaDAO.saveAndFlush(categoriaNueva);
+            return ICategoriaDAO.saveAndFlush(categoriaNueva);
         } catch (Exception e) {
             System.out.println("Error al guardar el detalle del producto"+ e);
             return null;
         }
     }
 
+    public boolean eliminarCategoria(Long id) {
+        try {
+            ICategoriaDAO.deleteById(id);
+            return true;
+        } catch (Exception e) {
+            System.out.println("Error al eliminar el producto"+ e);
+            return false;
+        }
+    }
 }
