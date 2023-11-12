@@ -1,10 +1,23 @@
 .Logo{
-    position: relative;
-    left: 620px;
-    width: 85px; 
+    
+    width: 75px; 
     height: auto;
     background-color: transparent;
-    bottom:174px;
+  
+   
     
-    
-}
+   
+    }
+
+    .contenedor-Logo{
+        border: 2px solid red;
+        width: 75px; 
+        margin-right: 20px;
+        margin-left: 400px;
+        display: flex;
+        align-items: center;
+
+      
+          
+
+    }

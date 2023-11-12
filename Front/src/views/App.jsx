@@ -12,41 +12,43 @@ import ProductDetail from './ProductDetail';
 import '../styles/App.css';
 
 const App = () => {
-    return (
-      <Router>
-        <div className="App">
-          <div className="ItemLocation">
-            <Banner>
-              <SearchBox />
-              <Carrito />
-              <Itemtext />
-              <Logo />
-              <BotonWhatsap />
-            </Banner>
-            <Routes>
-              <Route
-                path="producto/:id"
-                element={<ProductDetail />}
-              />
-              <Route
-                path="carrousel"
-                element={<Carrousel />}
-              />
-              <Route
-                path=""
-                element={
-                  <>
-                    <PromoSection />
-                    <Carrousel />
-                  </>
-                }
-              />
-            </Routes>
-          </div>
+  return (
+    <Router>
+      <div className="App">
+        <div className="ItemLocation">
+          <Banner>
+            <Itemtext />
+
+            <div className='Logosearch'><Logo />
+              <SearchBox /></div>
+            <Carrito />
+
+            {/*<BotonWhatsap />*/}
+          </Banner>
+          <Routes>
+            <Route
+              path="producto/:id"
+              element={<ProductDetail />}
+            />
+            <Route
+              path="carrousel"
+              element={<Carrousel />}
+            />
+            <Route
+              path=""
+              element={
+                <>
+                  <Carrousel />
+                  <PromoSection />
+
+                </>
+              }
+            />
+          </Routes>
         </div>
-      </Router>
-    );
-  };
-  
-  export default App;
-  
+      </div>
+    </Router>
+  );
+};
+
+export default App;

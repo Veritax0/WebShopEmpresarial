@@ -15,10 +15,12 @@ const ProductDetail = () => {
     if (!product) return <div>Cargando...</div>;
 
     return (
+        
         <div className="product-detail">
-            <h1>{product.name}</h1>
+            <h1>holaaaaaaaaaaaaaaaaaaaaaaaaaaa</h1>
+            <h1>{product.nombre}</h1>
             <img src={product.image} alt={product.name} />
-            <p>Precio: ${product.price}</p>
+            <p>Precio: ${product.precio}</p>
             
         </div>
     );
