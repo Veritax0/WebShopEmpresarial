@@ -35,9 +35,14 @@ public class InventarioServices {
         }
     }
 
-
-
-
-
+    public boolean eliminarInventario(Long id) {
+        try {
+            IInventarioDAO.deleteById(id);
+            return true;
+        } catch (Exception e) {
+            System.out.println("Error al eliminar el inventario"+ e);
+            return false;
+        }
+    }
 
 }

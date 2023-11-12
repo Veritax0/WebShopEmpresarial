@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,11 +41,19 @@ public class InventarioControlador {
         if (inventarioGuardado == null){
             return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).build();
         } else {
-            return  ResponseEntity.ok(inventarioGuardado);
+            return  ResponseEntity.status(HttpStatus.CREATED).body(inventarioGuardado);
         }
     }
 
-
+    @DeleteMapping("/{id}")
+    public ResponseEntity<InventarioDTO> eliminarPorId(@PathVariable Long id){
+        Boolean inventarioEncontrado = inventarioServices.eliminarInventario(id);
+        if (inventarioEncontrado == false){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        } else {
+            return  ResponseEntity.noContent().build();
+        }
+    }
 
 
 
