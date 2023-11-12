@@ -14,7 +14,7 @@ function CarouselComponent() {
   };
 
   return (
-    <div className="carousel-container">
+    <div className="carousel-container debug" >
       <Carousel activeIndex={index} onSelect={handleSelect}>
         <Carousel.Item interval={5000}>
           <img src={publicidad1} alt="Promo Image 1" />

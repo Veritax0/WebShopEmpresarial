@@ -1,6 +1,9 @@
 .PromoSection{
-    position: absolute;
-    top:500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    
 }
 
 .promoProducts {
@@ -20,4 +23,8 @@
     text-transform: uppercase; /* Convertimos el texto a mayúsculas */
     letter-spacing: 2px; /* Espaciamos un poco las letras */
     font-family: Arial, sans-serif; 
+}
+
+.debug{
+    border: 2px solid red;
 }
