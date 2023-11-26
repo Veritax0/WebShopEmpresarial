@@ -19,7 +19,7 @@ class PromoSection extends Component{
     render(){
         var products = this.state.products;
         return (
-            <div className="PromoSection debug">
+            <div className="PromoSection ">
                 <h1 className="promoTitle">Productos en Promoción y Nuevos</h1>
                 <div className="promoProducts">
                 {products.map(product => (
