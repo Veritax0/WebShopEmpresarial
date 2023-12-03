@@ -48,10 +48,10 @@ public class InventarioControlador {
     @DeleteMapping("/{id}")
     public ResponseEntity<InventarioDTO> eliminarPorId(@PathVariable Long id){
         Boolean inventarioEncontrado = inventarioServices.eliminarInventario(id);
-        if (inventarioEncontrado == false){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        } else {
+        if (inventarioEncontrado){
             return  ResponseEntity.noContent().build();
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
 
