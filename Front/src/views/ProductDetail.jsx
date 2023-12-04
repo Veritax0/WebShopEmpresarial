@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { ProductService } from '../service/ProductService';
-
 import { useContext } from 'react';
 import { CartContext } from '../contextos/CartContext';
 
@@ -18,7 +17,10 @@ const ProductDetail = () => {
 
     useEffect(() => {
         productService.getById(id)
-            .then(data => setProduct(data));
+        .then(data => {
+            console.log(data); // Para depuración
+            setProduct(data);
+        });
     }, [id, productService]);
 
     if (!product) return <div>Cargando...</div>;
@@ -34,7 +36,7 @@ const ProductDetail = () => {
     };
 
     return (
-        <div className="product-detail debug">
+        <div className="product-detail">
             <div className="product-image">
                 <img src={product.imagePrincipal} alt={product.name} />
             </div>

@@ -1,6 +1,6 @@
-/* Estiliza el contenedor ul para que sus hijos se muestren en línea y no en una lista vertical */
+
 ul {
-    list-style-type: none; /* Elimina los puntos de la lista */
+    list-style-type: none; 
     padding: 0; /* Elimina el padding predeterminado */
     margin: 0; /* Elimina el margen predeterminado */
     display: flex; /* Establece la disposición en línea */
@@ -20,7 +20,7 @@ li a {
     font-size: 20px;
 }
 
-/* Si deseas que los enlaces cambien de color al pasar el ratón por encima, puedes agregar el siguiente estilo: */
+
 li a:hover {
     color: #ccc; /* Cambia el color del enlace al pasar el ratón por encima */
 }

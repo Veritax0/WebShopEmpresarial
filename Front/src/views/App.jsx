@@ -11,6 +11,7 @@ import BotonWhatsap from '../components/BotonWhatsap';
 import ProductDetail from './ProductDetail';
 import '../styles/App.css';
 import { CartProvider } from '../contextos/CartContext';
+import CartSummary from './CartSummary';
 
 const App = () => {
   
@@ -37,10 +38,9 @@ const App = () => {
               path="producto/:id"
               element={<ProductDetail />}
             />
-            <Route
-              path="carrousel"
-              element={<Carrousel />}
-            />
+            <Route path="cart" 
+            element={<CartSummary />} />
+            
             <Route
               path=""
               element={

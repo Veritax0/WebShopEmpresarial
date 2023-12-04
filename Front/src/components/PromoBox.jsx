@@ -3,7 +3,7 @@ import "../styles/PromoBox.css";
 
 const PromoBox = ({ product }) => {
     return (
-        <Link to={`/${product.id}`}>
+        <Link to={`/producto/${product.id}`}>
             <div className="PromoBox">
 
                 <img src={product.imagenPrincipal} alt={product.nombre} className="promoBox__image" />

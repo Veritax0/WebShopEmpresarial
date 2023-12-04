@@ -7,7 +7,7 @@ const BotonCarrito = () => {
     const navigate = useNavigate(); // Utiliza el hook useNavigate
 
     const handleCartClick = () => {
-        navigate('/ruta-del-resumen-del-carrito'); // Cambia esto a tu ruta del resumen del carrito
+        navigate('/cart'); // Cambia esto a tu ruta del resumen del carrito
     };
 
     return (
