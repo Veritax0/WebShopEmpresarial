@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../contextos/CartContext.jsx';
+import "../styles/CartSummary.css";
+
 
 
 const CartSummary = () => {
@@ -10,20 +12,20 @@ const CartSummary = () => {
 
 
     return (
-        <div>
+        <div className="cart-summary">
             {cartItems.map(item => (
-                <div key={item.id}>
+                <div key={item.id} className="cart-item">
                     <h3>{item.nombre}</h3>
                     <p>Cantidad: {item.cantidad}</p>
                     <p>Precio: ${item.precio}</p>
                 </div>
             ))}
-            <h2>Total: ${totalPrice}</h2>
+            <h2 className="total-price">Total: ${totalPrice}</h2>
+            {/* Ejemplo de botón, si lo necesitas */}
+            {/* <a href="/checkout" className="button">Proceder al Pago</a> */}
         </div>
-       
     );
-   
-}
+            }
 
 
 

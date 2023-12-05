@@ -17,3 +17,6 @@
     display: flex;
 }
 
+.debug{
+    border: 2px solid red;
+}

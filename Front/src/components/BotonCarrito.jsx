@@ -11,7 +11,7 @@ const BotonCarrito = () => {
     };
 
     return (
-        <div className="Carrito">
+        <div className="Carrito ">
             <button className="Boton" onClick={handleCartClick}>
                 <img src={CarrritoImage} alt="Descripción de la imagen" className="Image" />
             </button>

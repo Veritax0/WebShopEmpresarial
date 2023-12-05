@@ -6,7 +6,7 @@ const PromoBox = ({ product }) => {
         <Link to={`/producto/${product.id}`}>
             <div className="PromoBox">
 
-                <img src={product.imagenPrincipal} alt={product.nombre} className="promoBox__image" />
+                <img src={`/${product.id}.png`} alt={product.nombre} className="promoBox__image" />
                 <p className="promoBox__price">${product.precio}</p>
             </div>
         </Link>

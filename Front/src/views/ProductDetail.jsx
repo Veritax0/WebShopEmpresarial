@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { ProductService } from '../service/ProductService';
 import { useContext } from 'react';
 import { CartContext } from '../contextos/CartContext';
+import "../styles/ProductDetail.css";
 
 const ProductDetail = () => {
     const [product, setProduct] = useState(null);
@@ -38,7 +39,7 @@ const ProductDetail = () => {
     return (
         <div className="product-detail">
             <div className="product-image">
-                <img src={product.imagePrincipal} alt={product.name} />
+                <img src={`/${product.id}.png`} alt={product.name} />
             </div>
             <div className="product-info">
                 <h1>{product.nombre}</h1>
