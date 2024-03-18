@@ -14,40 +14,32 @@ function CarouselComponent() {
   };
 
   return (
-    <div className="carousel-container debug" >
+    <div className="carousel-container" >
       <Carousel activeIndex={index} onSelect={handleSelect}>
-        <Carousel.Item interval={5000}>
+        <Carousel.Item interval={3000}>
           <img src={publicidad1} alt="Promo Image 1" />
           <Carousel.Caption>
 
-            <p>60000$</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        
-        <Carousel.Item interval={5000}>
-          <img src={publicidad2} alt="Promo Image 2" />
-          <Carousel.Caption>
-          <h3>PARLANTE TYG TG:165C</h3>
-            <p>90000$</p>
            
           </Carousel.Caption>
         </Carousel.Item>
         
-        <Carousel.Item interval={5000}>
+        <Carousel.Item interval={3000}>
+          <img src={publicidad2} alt="Promo Image 2" />
+          <Carousel.Caption>
+          
+           
+          </Carousel.Caption>
+        </Carousel.Item>
+        
+        <Carousel.Item interval={3000}>
           <img src={publicidad3} alt="Promo Image 3" />
           <Carousel.Caption>
-          <h3>Diademas Mark Boss</h3>
-            <p>110000$</p>
+          
           </Carousel.Caption>
         </Carousel.Item>
 
-        <Carousel.Item interval={5000}>
-          <img src={publicidad4} alt="Promo Image 4" />
-          <Carousel.Caption>
-            <h3>TV BOX</h3>
-            <p>20000$</p>
-          </Carousel.Caption>
-        </Carousel.Item>
+        
       </Carousel>
     </div>
   );
