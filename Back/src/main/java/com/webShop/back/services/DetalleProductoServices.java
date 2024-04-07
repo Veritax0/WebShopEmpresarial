@@ -7,13 +7,13 @@ import org.springframework.stereotype.Service;
 
 import com.webShop.back.modelo.DTO.DetalleProductoDTO;
 import com.webShop.back.modelo.Entidad.DetalleProducto;
-import com.webShop.back.persistencia.IDetalleProductoDAO;
+import com.webShop.back.persistencia.DetalleProductoDAO;
 
 @Service
 public class DetalleProductoServices {
 
     @Autowired     
-    private IDetalleProductoDAO detalleProductoDAO;
+    private DetalleProductoDAO detalleProductoDAO;
 
     public DetalleProductoDTO buscarPorId(Long id) {   
         final Optional<DetalleProducto> detalleProductoEncontrado = detalleProductoDAO.findById(id);

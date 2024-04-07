@@ -7,13 +7,13 @@ import org.springframework.stereotype.Service;
 
 import com.webShop.back.modelo.DTO.ProductoDTO;
 import com.webShop.back.modelo.Entidad.Producto;
-import com.webShop.back.persistencia.IProductoDAO;
+import com.webShop.back.persistencia.ProductoDAO;
 
 @Service
 public class ProductoServices {
     
     @Autowired
-    private IProductoDAO IproductoDAO;
+    private ProductoDAO IproductoDAO;
     private Producto producto = new Producto();
 
     public ProductoDTO buscarPorId(Long id) {

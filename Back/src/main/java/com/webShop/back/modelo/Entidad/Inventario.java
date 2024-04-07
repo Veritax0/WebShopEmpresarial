@@ -1,10 +1,6 @@
 package com.webShop.back.modelo.Entidad;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import jakarta.persistence.*;
 
 import com.webShop.back.modelo.DTO.InventarioDTO;
 

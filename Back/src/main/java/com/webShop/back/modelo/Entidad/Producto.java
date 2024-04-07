@@ -5,7 +5,7 @@ package com.webShop.back.modelo.Entidad;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 
 import com.webShop.back.modelo.DTO.ProductoDTO;
