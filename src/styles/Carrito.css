@@ -1,0 +1,28 @@
+.Carrito{
+    display: flex;
+    justify-content: flex-end;
+    
+   
+    
+    width: 100%;
+    height: 15vh;
+    
+    
+    
+   
+
+}
+
+.Boton{
+    background-color: transparent;
+    border: none;
+    
+    
+}
+
+.Image{
+    width: 75px;
+    height: auto; 
+    display: flex;
+}
+

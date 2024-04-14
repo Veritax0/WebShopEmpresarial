@@ -1,0 +1,14 @@
+.Logo{
+    
+    width: 75px; 
+    height: auto;
+    background-color: transparent;
+    }
+
+    .contenedor-Logo{
+      
+        width: 75px; 
+        height: auto;
+        display: flex;
+        align-items: center;
+    }
