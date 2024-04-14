@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
+    width: auto;
     
 }
 
@@ -27,4 +27,48 @@
 
 .debug{
     border: 2px solid red;
+}
+
+
+@media (max-width: 1024px) {
+    .promoTitle {
+        
+        font-size: 4.5rem; /* Aumentamos el tamaño del texto */
+    color: #c20ccfdd;   /* Cambiamos el color a un tono rojo */
+    text-align: center; /* Centramos el texto */
+    margin-top: 20px; /* Agregamos un margen superior para darle más espacio */
+    font-weight: bold; /* Hacemos el texto más grueso */
+    text-transform: uppercase; /* Convertimos el texto a mayúsculas */
+    letter-spacing: 2px; /* Espaciamos un poco las letras */
+    font-family: Arial, sans-serif;
+        
+    }
+}
+
+@media (max-width: 760px) {
+    .promoTitle {
+        font-size: 4.0rem; /* Aumentamos el tamaño del texto */
+    color: #c20ccfdd;   /* Cambiamos el color a un tono rojo */
+    text-align: center; /* Centramos el texto */
+    margin-top: 18px; /* Agregamos un margen superior para darle más espacio */
+    font-weight: bold; /* Hacemos el texto más grueso */
+    text-transform: uppercase; /* Convertimos el texto a mayúsculas */
+    letter-spacing: 1.8px; /* Espaciamos un poco las letras */
+    font-family: Arial, sans-serif;
+        
+    }
+}
+
+@media (max-width: 480px) {
+    .promoTitle {
+        font-size: 3.0rem; /* Aumentamos el tamaño del texto */
+    color: #c20ccfdd;   /* Cambiamos el color a un tono rojo */
+    text-align: center; /* Centramos el texto */
+    margin-top: 15px; /* Agregamos un margen superior para darle más espacio */
+    font-weight: bold; /* Hacemos el texto más grueso */
+    text-transform: uppercase; /* Convertimos el texto a mayúsculas */
+    letter-spacing: 1.5px; /* Espaciamos un poco las letras */
+    font-family: Arial, sans-serif;
+        
+    }
 }

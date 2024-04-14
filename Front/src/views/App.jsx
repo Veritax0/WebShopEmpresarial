@@ -12,50 +12,68 @@ import ProductDetail from './ProductDetail';
 import '../styles/App.css';
 import { CartProvider } from '../contextos/CartContext';
 import CartSummary from './CartSummary';
+import Registro from './Registro';
+import Ingresa from "./Ingresa"
+
+
 
 const App = () => {
-  
+
 
 
 
   return (
     <CartProvider>
-    <Router>
-      <div className="App">
-        <div className="ItemLocation">
-          <Banner>
-          <BotonWhatsap />
-            <Itemtext />
+      <Router>
+        <div className="App">
+          
 
-            <div className='Logosearch'><Logo />
-              <SearchBox /></div>
-            <BotonCarrito />
+          
+              <div className='div'>
+            <Banner>
+              <BotonWhatsap />
 
-            
-          </Banner>
-          <Routes>
-            <Route
-              path="producto/:id"
-              element={<ProductDetail />}
-            />
-            <Route path="cart" 
-            element={<CartSummary />} />
-            
-            <Route
-              path=""
-              element={
-                <>
-                
-                  <Carrousel />
-                  <PromoSection />
+                <div className='text'>
+                  <Itemtext />
+                </div>
 
-                </>
-              }
-            />
-          </Routes>
-        </div>
-      </div>
-    </Router>
+                <div className='logo'>
+                  <Logo />
+                </div>
+
+                <div>
+                  <SearchBox />
+                </div>
+
+                <div className='carro'>
+                  <BotonCarrito />
+                </div>
+
+
+            </Banner>
+              </div>
+         
+            <Routes>
+              <Route
+                path="producto/:id"
+                element={<ProductDetail />}
+              />
+              <Route path="cart"
+                element={<CartSummary />} />
+
+              <Route path="registro"
+                element={<Registro />} />
+
+              <Route path="ingresa"
+                element={<Ingresa/>} />
+
+              <Route
+                path=""
+                element={<><div className='carrusel'><Carrousel /></div><PromoSection /></>} />
+            </Routes>
+          </div>
+        
+      </Router>
     </CartProvider>
   );
 };
