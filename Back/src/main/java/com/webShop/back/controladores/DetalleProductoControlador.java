@@ -3,17 +3,14 @@ package com.webShop.back.controladores;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.webShop.back.modelo.DTO.DetalleProductoDTO;
 import com.webShop.back.modelo.Entidad.DetalleProducto;
 import com.webShop.back.services.DetalleProductoServices;
+
+import io.swagger.v3.oas.annotations.*;
 
 @RestController
 @RequestMapping ("/detalleProducto")
@@ -43,5 +40,27 @@ public class DetalleProductoControlador {
         }
     }
 
+    @Operation(summary = "Guardar las imágenes de un detalleProducto ya creado",
+            description = "End Point para subir imagenes a la nube")
+    @Parameter(name = "imagen1", description = "Imagen 1 que se va a guardar")
+    @Parameter(name = "imagen2", description = "Imagen 2 que se va a guardar")
+    @Parameter(name = "imagen3", description = "Imagen 3 que se va a guardar")
+    @Parameter(name = "productoId", description = "Id del producto a la que se le van a asociar las imagenes")
+    @PostMapping("/guardarImagenes")
+    public ResponseEntity<?> guardarImagen(
+            @RequestParam("productoId") Long detalleId,
+            @RequestParam("imagen1") MultipartFile imagen1,
+            @RequestParam("imagen2") MultipartFile imagen2,
+            @RequestParam("imagen3") MultipartFile imagen3) {
+        try {
+
+            detalleProductoServices.guardarImagen(imagen1, imagen2, imagen3, detalleId);
+
+            return new ResponseEntity<>(HttpStatus.OK);
+
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+        }
+    }
 
 }
