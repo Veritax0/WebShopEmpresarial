@@ -12,18 +12,14 @@ public class ProductoDTO{
     @Getter
     private int precio;
     @Getter
-    private Image imagenPrincipal;
-    @Getter
     private DetalleProductoDTO detalleProducto;
     
     public ProductoDTO(Long id, String nombre, int precio, Image imagenPrincipal, DetalleProductoDTO detalleProducto) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
-        this.imagenPrincipal = imagenPrincipal;
         this.detalleProducto = detalleProducto;
     }
-
     
     public ProductoDTO() {
     }

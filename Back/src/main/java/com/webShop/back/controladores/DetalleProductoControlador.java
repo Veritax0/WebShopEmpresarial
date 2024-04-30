@@ -22,22 +22,34 @@ public class DetalleProductoControlador {
 
     @GetMapping("/{id}")
     public ResponseEntity<DetalleProductoDTO> buscarPorId(@PathVariable Long id){
-        DetalleProductoDTO detalleProductoEncontrado = detalleProductoServices.buscarPorId(id);
-        if (detalleProductoEncontrado == null){
+        try {
+            DetalleProductoDTO detalleProductoEncontrado = detalleProductoServices.buscarPorId(id);
+            if (detalleProductoEncontrado == null){
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            } else {
+                return  ResponseEntity.ok(detalleProductoEncontrado);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        } else {
-            return  ResponseEntity.ok(detalleProductoEncontrado);
         }
+        
     }
 
     @PostMapping("/guardar")
     public ResponseEntity<DetalleProducto> guardarDetalleProducto(@RequestBody DetalleProductoDTO detalleProducto){  
-        DetalleProducto detalleProductoGuardado = detalleProductoServices.guardar(detalleProducto);
-        if (detalleProductoGuardado == null){
+        try {
+            DetalleProducto detalleProductoGuardado = detalleProductoServices.guardar(detalleProducto);
+            if (detalleProductoGuardado == null){
+                return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).build();
+            } else {
+                return  ResponseEntity.status(HttpStatus.CREATED).body(detalleProductoGuardado);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
             return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).build();
-        } else {
-            return  ResponseEntity.status(HttpStatus.CREATED).body(detalleProductoGuardado);
-        }
+        } 
+        
     }
 
     @Operation(summary = "Guardar las imágenes de un detalleProducto ya creado",

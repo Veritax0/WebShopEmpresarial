@@ -24,12 +24,18 @@ public class ProductoControlador {
 
     @GetMapping("/{id}")
     public ResponseEntity<ProductoDTO> buscarPorId(@PathVariable Long id){
-        ProductoDTO productoEncontrado = productoServices.buscarPorId(id);
-        if (productoEncontrado == null){
+        try {
+            ProductoDTO productoEncontrado = productoServices.buscarPorId(id);
+            if (productoEncontrado == null){
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            } else {
+                return  ResponseEntity.ok(productoEncontrado);
+            } 
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        } else {
-            return  ResponseEntity.ok(productoEncontrado);
-        } 
+        }
+        
     }
     
     /**
@@ -38,14 +44,18 @@ public class ProductoControlador {
      * @param producto
      * @return
      */
-    @PostMapping("/guardar")
+    @PostMapping("/guardarr")
     public ResponseEntity<Producto> guardarProducto(@RequestBody ProductoDTO producto){  
-        Producto productoGuardado = productoServices.guardarProducto(producto);
-        if (productoGuardado == null){
-            return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).build();
-        } else {
+        try {
+            Producto productoGuardado = productoServices.guardarProducto(producto);
+            
             return ResponseEntity.status(HttpStatus.CREATED).body(productoGuardado);
+            
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).build();
         }
+        
     }
 
     /**
@@ -55,12 +65,18 @@ public class ProductoControlador {
      */
     @GetMapping("/buscar")
     public ResponseEntity<List<ProductoDTO>> buscarTodos(){
-        List<ProductoDTO> productosEncontrados = productoServices.buscarTodos();
-        if (productosEncontrados == null){
+        try {
+            List<ProductoDTO> productosEncontrados = productoServices.buscarTodos();
+            if (productosEncontrados == null){
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            } else {
+                return  ResponseEntity.ok(productosEncontrados);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        } else {
-            return  ResponseEntity.ok(productosEncontrados);
         }
+        
     }
 
     /**
@@ -71,12 +87,18 @@ public class ProductoControlador {
      */
     @DeleteMapping("/{id}")
     public ResponseEntity<ProductoDTO> eliminarProducto(@PathVariable Long id){
-        Boolean productoEliminado = productoServices.eliminarProducto(id);
-        if (productoEliminado == false){
+        try {
+            Boolean productoEliminado = productoServices.eliminarProducto(id);
+            if (productoEliminado == false){
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            } else {
+                return  ResponseEntity.noContent().build();
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        } else {
-            return  ResponseEntity.noContent().build();
         }
+        
     }
 
     @Operation(summary = "Guardar las imágenes de un producto ya creado",
@@ -94,6 +116,7 @@ public class ProductoControlador {
             return new ResponseEntity<>(HttpStatus.OK);
 
         } catch (Exception e) {
+            System.out.println(e.getMessage());
             return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
         }
     }

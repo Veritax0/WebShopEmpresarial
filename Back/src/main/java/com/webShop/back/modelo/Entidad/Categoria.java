@@ -18,9 +18,6 @@ public class Categoria {
     private Long id;
     @Getter
     private String nombre;
-    @Getter
-    @OneToMany(mappedBy = "categoria")
-    private Set<DetalleProducto> detalleProducto;
 
     public Categoria(Long id, String nombre) {
         this.id = id;

@@ -14,9 +14,6 @@ public class Inventario {
     @Getter 
     private Long id;
     @Getter 
-    @OneToOne(mappedBy = "inventario")
-    private DetalleProducto detalleProducto;
-    @Getter 
     private int cantidad;
 
     public Inventario(InventarioDTO inventarioDTO) {

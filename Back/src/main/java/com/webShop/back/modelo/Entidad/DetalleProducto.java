@@ -13,11 +13,7 @@ import lombok.Data;
 public class DetalleProducto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    
     private Long id;
-    @OneToOne
-    @JoinColumn(name="inventario_id")
-    private Inventario inventario;
     private String descripcion;
     private String caracteristicas;
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -29,6 +25,9 @@ public class DetalleProducto {
     @ManyToOne
     @JoinColumn(name="categoria_id")
     private Categoria categoria;
+    @JoinColumn(name="inventario_id")
+    @OneToOne
+    private Inventario inventario;
     
 
     //Constructores

@@ -23,8 +23,6 @@ public class Producto {
     @OneToOne
     private DetalleProducto detalleProducto;
 
-    
-
     public Producto(Long id, String nombre, int precio, Image imagenPrincipal, DetalleProducto detalleProducto) {
         this.id = id;
         this.nombre = nombre;
@@ -40,7 +38,6 @@ public class Producto {
         this.id = productoDTO.getId();
         this.nombre = productoDTO.getNombre();
         this.precio = productoDTO.getPrecio();
-        this.imagenPrincipal = productoDTO.getImagenPrincipal();
         this.detalleProducto = new DetalleProducto(productoDTO.getDetalleProducto());
     }
 
@@ -56,6 +53,4 @@ public class Producto {
         }
         return productosDTO;
     }
-    
-
 }

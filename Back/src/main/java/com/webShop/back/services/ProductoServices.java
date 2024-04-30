@@ -25,6 +25,7 @@ public class ProductoServices {
 
     private Producto producto = new Producto();
 
+    @Transactional
     public ProductoDTO buscarPorId(Long id) {
         final Optional<Producto> productoEncontrado = IproductoDAO.findById(id);
         
@@ -35,16 +36,14 @@ public class ProductoServices {
         }
     }
 
+    @Transactional
     public Producto guardarProducto(ProductoDTO producto) {
-        try {
-            Producto productoNuevo = new Producto(producto);
-            return IproductoDAO.saveAndFlush(productoNuevo);
-        } catch (Exception e) {
-            System.out.println("Error al guardar el producto"+ e);
-            return null;
-        }   
+        Producto productoNuevo = new Producto(producto);
+        return IproductoDAO.save(productoNuevo);
+        
     }
     
+    @Transactional
     public List<ProductoDTO> buscarTodos() {
         try {
             List<Producto> productosEncontrados =  IproductoDAO.findAll();
@@ -56,6 +55,7 @@ public class ProductoServices {
         }
     }
 
+    @Transactional
     public boolean eliminarProducto(Long id) {
         try {
             IproductoDAO.deleteById(id);
@@ -77,7 +77,7 @@ public class ProductoServices {
         //Revisar si hay imagen principal y luego guardarla
         if (imagenPrincipal.getOriginalFilename() != ""){
             Map result = cloudinaryService.upload(imagenPrincipal, folder);
-    
+
             Image mainImage = new Image(result.get("public_id").toString(), 
             result.get("secure_url").toString());
             producto.setImagenPrincipal(mainImage);
@@ -85,7 +85,7 @@ public class ProductoServices {
             throw new DataAccessException("Main image not found") {
             };
         }
-       
+        
         IproductoDAO.save(producto);
     }
 }

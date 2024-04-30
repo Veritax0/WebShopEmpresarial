@@ -35,7 +35,7 @@ public class DetalleProductoServices {
     public DetalleProducto guardar(DetalleProductoDTO detalleProducto) {
         try {
             DetalleProducto detalleProductoNuevo = new DetalleProducto(detalleProducto);
-            return detalleProductoDAO.saveAndFlush(detalleProductoNuevo);
+            return detalleProductoDAO.save(detalleProductoNuevo);
         } catch (Exception e) {
             System.out.println("Error al guardar el detalle del producto"+ e);
             return null;
