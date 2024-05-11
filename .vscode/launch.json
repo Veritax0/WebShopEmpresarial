@@ -2,24 +2,14 @@
     "version": "1.0.0",
     "configurations": [
         {
-            "type": "java",
-            "name": "BackApplication",
-            "request": "launch",
-            "mainClass": "com.webShop.back.BackApplication",
-            "projectName": "lab2"
-        },
-        {
             "name": "Start App",
-            "runtimeVersion": "16.0.0",
-            "runtimeArgs": [
-                "start"
-            ],
+            "runtimeArgs": ["start"],
             "env": {
                 "BROWSER": "none"
             },
             "request": "launch",
             "runtimeExecutable": "npm",
-            "type": "node"
+            "type": "node",
         },
         {
             "type": "chrome",

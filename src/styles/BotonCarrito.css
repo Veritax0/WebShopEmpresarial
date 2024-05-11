@@ -1,0 +1,21 @@
+.Carrito{
+    display: flex;
+    justify-content:  center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    
+}
+
+.Boton{
+    background-color: transparent;
+    border: none;
+ 
+}
+
+.Image{
+    width: 75px;
+    height: auto; 
+    display: flex;
+}
+

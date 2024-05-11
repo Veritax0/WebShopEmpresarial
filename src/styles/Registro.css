@@ -1,0 +1,57 @@
+/* Estilos base para el contenedor y el formulario */
+.registro-container {
+    background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.formulario-registro {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px; /* Se ajustará según la pantalla, pero no superará los 400px */
+    gap: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.formulario-registro label {
+    font-size: 16px; /* Opcional: Puede ajustarse para pantallas pequeñas */
+}
+
+.formulario-registro input, .formulario-registro button {
+    height: 40px; /* Altura estándar para facilidad de clic en móviles */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.formulario-registro button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.formulario-registro button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive para tablets */
+@media (max-width: 768px) {
+    .formulario-registro {
+        max-width: 90%; /* Más ancho en pantallas más pequeñas */
+    }
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+    .formulario-registro {
+        max-width: 100%; /* Aprovecha todo el ancho en pantallas muy pequeñas */
+    }
+    .formulario-registro label, .formulario-registro input, .formulario-registro button {
+        font-size: 14px; /* Texto más pequeño para que todo quepa mejor */
+    }
+}
