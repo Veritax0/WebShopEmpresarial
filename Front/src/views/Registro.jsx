@@ -22,7 +22,7 @@ const Registro = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("localhost:8080/v1/user/create", formData);
+            const response = await axios.post("localhost:8080/v1/user/registro", formData);
             console.log(response.data);
             // Manejar la respuesta del backend (por ejemplo, mostrar un mensaje de éxito)
         } catch (error) {
