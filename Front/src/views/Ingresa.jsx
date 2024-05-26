@@ -10,7 +10,7 @@ const Ingresa = () => {
         event.preventDefault();
 
         try {
-            const response = await axios.post('localhost:8080/v1/user/login', { email, password });
+            const response = await axios.post('http://localhost:8080/v1/user/login', { email, password });
             console.log('Login successful:', response.data);
             // Handle successful login, e.g., save token, redirect, etc.
         } catch (error) {
